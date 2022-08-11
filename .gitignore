@@ -1,0 +1,5 @@
+/password.txt
+*/target/**
+*.iml
+*.jks
+.idea
