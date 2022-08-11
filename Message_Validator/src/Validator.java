@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Validator {
 
-    String message=null;
+    String message=null; //it is better to only use local variables and explicitly link the functions in main!
     String precondition_check_result=null;
 
     public boolean check() {
@@ -18,8 +18,7 @@ public class Validator {
         }
 
 
-
-        String[] strArr = message.split("(?<=\\D)(?=\\d)");
+        String[] strArr = message.split("(?<=\\D)(?=\\d)"); //Regex performance sucks, write one function based on Character.isdigit()
         for (String split_message_part : strArr) {
             //System.out.println(i);
             //System.out.println(strArr[i]);
@@ -28,7 +27,7 @@ public class Validator {
             try {
                 //Fails if a letter string is used here which means the order of letters and numbers was wrong (Tim3 instead of 3Tim)
                 supposed_length = Integer.parseInt(sub_strArr[0]);
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("The message you entered was invalid.");
                 return false;
             }
@@ -70,10 +69,6 @@ public class Validator {
 
             }
 
-        }
-        else if(message.isEmpty()){
-                //Allow empty strings to pass because they would be filtered by the else condition
-                precondition_check_result="valid";
         }
         else{
             precondition_check_result="invalid";
