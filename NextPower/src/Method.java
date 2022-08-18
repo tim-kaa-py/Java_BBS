@@ -10,6 +10,7 @@ public class Method {
         if (c == a) {
             c = (int) Math.pow(a + 1.0, b);
         }
-        System.out.println(String.format("find_next_power(%1$d;%2$d)="+c, a, b));
+        String str = String.format("find_next_power(%1$d;%2$d)="+c, a, b);
+        System.out.println(str);
     }
 }
