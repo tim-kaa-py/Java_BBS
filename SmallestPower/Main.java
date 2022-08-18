@@ -24,15 +24,17 @@ public class Main {
     public static void output(int value ,int power) {
         if (value > 0 && power > 1) {
             int i = 1;
-            double result = 0;
-            while (Math.pow(i, power) <= value) {
-                result = Math.pow(i, power);
-                i++;
+            int result = 0;
+            while (Math.pow(++i, power) < value) {
+                result = (int)Math.pow(i, power);
+                System.out.println(i);
+             //   i += 1;
             }
-            System.out.println("The smallest power value is: " + Math.pow(i, power));
+            //System.out.println(i);
+            System.out.println("The smallest power value is: " + (int)Math.pow(i, power));
         }
         else {
-            System.out.println("Please restart and enter valid value!");
+            System.out.println("Please restart and enter valid values!");
             System.exit(0);
         }
     }
