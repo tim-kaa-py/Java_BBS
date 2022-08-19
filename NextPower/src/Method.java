@@ -6,9 +6,10 @@ public class Method {
         int a = eingabe.nextInt();
         System.out.print("Gib eine Potenz ein (noch eine natuerliche Zahl):");
         int b = eingabe.nextInt();
-        int c = (int) Math.pow(Math.ceil(Math.pow(a, 1.0 / b)), b); //rounding up b'th root of a and conv. to int
+        double d = Math.ceil(Math.pow(a, 1.0 / b));
+        int c = (int) Math.pow(d, b); //rounding up b'th root of a and conv. to int
         if (c == a) {
-            c = (int) Math.pow(a + 1.0, b);
+            c = (int) Math.pow(d+1, b);
         }
         String str = String.format("find_next_power(%1$d;%2$d)="+c, a, b);
         System.out.println(str);
