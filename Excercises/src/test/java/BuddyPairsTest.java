@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class BuddyPairsTest {
 
@@ -29,5 +30,10 @@ class BuddyPairsTest {
     @Test
     void buddyTest5() {
         assertEquals(Arrays.asList(195L, 140L), BuddyPairs.buddy(150L, 250L));
+    }
+
+    @Test
+    void buddyFail() {
+        assertNull(BuddyPairs.buddy(1L, 40L));
     }
 }
