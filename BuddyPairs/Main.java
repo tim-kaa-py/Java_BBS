@@ -19,6 +19,7 @@ public class Main {
         System.out.print("Type a value for the limit: ");
         int limit = input2.nextInt();
         buddy(start, limit);
+        buddy2(start,limit);
     }
 
     public static void buddy(int start ,int limit) {
@@ -26,13 +27,28 @@ public class Main {
         for (int n = start; n < limit; ++n) {
             for (int m = n+1; m < limit * limit; ++m) {
                 if (getDivisorSum(m) == n + 1 && getDivisorSum(n) == m + 1) {
-                    System.out.println(n);
-                    System.out.println(m);
                     pair.add(n);
                     pair.add(m);
                 }
             }
         }
+        if (pair.isEmpty()){
+            System.out.println("Nothing");
+        }
+        else {
+            System.out.println(pair);
+        }
+    }
+
+    public static void buddy2(int start ,int limit) {
+        List<Integer> pair = new ArrayList<>();
+        for (int n = start; n < limit; ++n) {
+            int m = getDivisorSum(n) - 1;
+            if (getDivisorSum(m) == n + 1 && m > n){
+                    pair.add(n);
+                    pair.add(m);
+                }
+            }
         if (pair.isEmpty()){
             System.out.println("Nothing");
         }
