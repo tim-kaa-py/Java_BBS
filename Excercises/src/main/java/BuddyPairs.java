@@ -10,7 +10,7 @@ public class BuddyPairs {
             final long sumDivisors = divisors.stream().mapToLong(Long::longValue).sum();
             final List<Long> buddy = calculateDivisors(sumDivisors - 1);
             final long sumBuddy = buddy.stream().mapToLong(Long::longValue).sum();
-            if (i == sumBuddy - 1) {
+            if (i == sumBuddy - 1 && sumDivisors > sumBuddy) {
                 return Arrays.asList(i, sumDivisors - 1);
             }
         }

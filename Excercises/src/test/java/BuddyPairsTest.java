@@ -19,7 +19,7 @@ class BuddyPairsTest {
 
     @Test
     void buddyTest3() {
-        assertEquals(Arrays.asList(75L, 48L), BuddyPairs.buddy(50L, 100L));
+        assertNull(BuddyPairs.buddy(50L, 100L));
     }
 
     @Test
@@ -29,7 +29,7 @@ class BuddyPairsTest {
 
     @Test
     void buddyTest5() {
-        assertEquals(Arrays.asList(195L, 140L), BuddyPairs.buddy(150L, 250L));
+        assertNull(BuddyPairs.buddy(50L, 100L));
     }
 
     @Test
