@@ -1,5 +1,3 @@
-package BuddyPairs;
-
 import java.util.List;
 
 public class Printer {
