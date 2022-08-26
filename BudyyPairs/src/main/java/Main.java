@@ -3,7 +3,7 @@ import java.util.List;
 //import static GetInput.getStartLimit;
 //import static Printer.printer;
 
-public class Main2 {
+public class Main {
     public static void main(String[] args) {
         int[] startLimitPair = GetInput.getStartLimit();
         BuddyCalculator buddyCalculator = new BuddyCalculator();
