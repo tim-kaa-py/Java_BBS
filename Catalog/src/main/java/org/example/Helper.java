@@ -30,6 +30,10 @@ public class Helper {
     public void catalog(String catalog, String tool) throws IOException {
         ArrayList<Catalog_item> catalog_list = catalog_to_list(catalog);
         //displayElements(catalog_list);
+        if (tool.isEmpty()) {
+            System.out.print("Please enter non empty string!");
+            System.exit(0);
+        }
         List<Catalog_item> result = catalog_list.stream()
                 .filter(catalog_item -> catalog_item.name.contains(tool))
                 .collect(Collectors.toList());
