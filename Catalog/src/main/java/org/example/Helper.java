@@ -39,10 +39,9 @@ public class Helper {
                 .collect(Collectors.toList());
         if (result.isEmpty()) {
             System.out.print("Nothing");
-        } else {
-            for (Catalog_item product : result) {
+        }
+        for (Catalog_item product : result) { // if result is empty loop is skipped (no else condition needed)
                 System.out.print(product.name + " > prx: $" + product.price + " qty: " + product.quantity + "\n");
-            }
         }
     }
 
@@ -58,9 +57,9 @@ public class Helper {
             if (!line.isEmpty()){//only read non empty lines
                 //System.out.println(line);
                 Document html = Jsoup.parse(line);
-                String name = html.body().getElementsByTag("name").text();
-                double price = parseDouble(html.body().getElementsByTag("prx").text());
-                int quantity = parseInt(html.body().getElementsByTag("qty").text());
+                String name = html.getElementsByTag("name").text();
+                double price = parseDouble(html.getElementsByTag("prx").text());
+                int quantity = parseInt(html.getElementsByTag("qty").text());
                 //System.out.println(name);
                 //System.out.println(price);
                 //System.out.println(quantity);
