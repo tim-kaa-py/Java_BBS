@@ -7,14 +7,13 @@ import static java.lang.Math.min;
 public class RectangleIntoSquares {
 
     public boolean checkIfRectangle(int length, int width) {
-        if (length == width  && length > 1) return false;
-        if (length < 1 && width < 1) return false;
-        return true;
+        if (length == width) return false;
+        return length >= 1 && width >= 1;
     }
 
 
     public List<Integer> calculateSquareSizes(int length, int width) {
-            List<Integer> SquareSizeList = new ArrayList<Integer>();
+            List<Integer> SquareSizeList = new ArrayList<>();
             int minSquareSize = min(length, width);
             int maxSquareSize = max(length, width);
             if (minSquareSize == maxSquareSize) {

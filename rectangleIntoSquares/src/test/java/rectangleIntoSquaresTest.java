@@ -1,23 +1,22 @@
 import org.junit.Test;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class rectangleIntoSquaresTest {
+public class RectangleIntoSquaresTest {
 
     @Test
-    public void checkIfItIsARectangle() throws Exception {
+    public void checkIfItIsARectangle(){
         RectangleIntoSquares rectangleIntoSquares = new RectangleIntoSquares();
         assertFalse(rectangleIntoSquares.checkIfRectangle(2, 2));
         assertTrue(rectangleIntoSquares.checkIfRectangle(3, 2));
     }
 
     @Test
-    public void returnSquareSize() throws Exception {
+    public void returnSquareSize(){
         RectangleIntoSquares rectangleIntoSquares = new RectangleIntoSquares();
         List<Integer> SquareSizeList = new ArrayList<>();
         SquareSizeList.add(3);
@@ -30,7 +29,7 @@ public class rectangleIntoSquaresTest {
     }
 
     @Test
-    public void returnSquareSizeNull() throws Exception {
+    public void returnSquareSize_2_2(){
         RectangleIntoSquares rectangleIntoSquares = new RectangleIntoSquares();
         List<Integer> SquareSizeList = new ArrayList<>();
         SquareSizeList.add(2);
@@ -38,7 +37,7 @@ public class rectangleIntoSquaresTest {
     }
 
     @Test
-    public void returnSquareSize_10_2() throws Exception {
+    public void returnSquareSize_10_2(){
         RectangleIntoSquares rectangleIntoSquares = new RectangleIntoSquares();
         List<Integer> SquareSizeList = new ArrayList<>();
         SquareSizeList.add(2);
@@ -50,11 +49,9 @@ public class rectangleIntoSquaresTest {
     }
 
     @Test
-    public void returnSquareSize_10_5() throws Exception {
+    public void returnSquareSize_10_5(){
         RectangleIntoSquares rectangleIntoSquares = new RectangleIntoSquares();
-        List<Integer> SquareSizeList = new ArrayList<>();
-        SquareSizeList.add(5);
-        SquareSizeList.add(5);
+        List<Integer> SquareSizeList = Arrays.asList(5, 5);
         assertEquals(SquareSizeList, rectangleIntoSquares.calculateSquareSizes(10, 5));
     }
 }
