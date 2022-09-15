@@ -14,19 +14,15 @@ public class RectangleIntoSquares {
 
 
     public List<Integer> calculateSquareSizes(int length, int width) {
-        if (checkIfRectangle(length, width)){
             List<Integer> SquareSizeList = new ArrayList<Integer>();
             int minSquareSize = min(length, width);
             int maxSquareSize = max(length, width);
-            if (minSquareSize == maxSquareSize && minSquareSize == 1) {
-                SquareSizeList.add(1);
+            if (minSquareSize == maxSquareSize) {
+                SquareSizeList.add(minSquareSize);
             } else{
                 SquareSizeList.add(minSquareSize);
                 SquareSizeList.addAll(calculateSquareSizes(maxSquareSize - minSquareSize, minSquareSize));
             }
             return SquareSizeList;
-        }
-        System.out.println("Not Valid Rectangle");
-        return null;
     }
 }

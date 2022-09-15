@@ -32,7 +32,30 @@ public class rectangleIntoSquaresTest {
     @Test
     public void returnSquareSizeNull() throws Exception {
         RectangleIntoSquares rectangleIntoSquares = new RectangleIntoSquares();
-        assertEquals(null, rectangleIntoSquares.calculateSquareSizes(2, 2));
+        List<Integer> SquareSizeList = new ArrayList<>();
+        SquareSizeList.add(2);
+        assertEquals(SquareSizeList, rectangleIntoSquares.calculateSquareSizes(2, 2));
+    }
+
+    @Test
+    public void returnSquareSize_10_2() throws Exception {
+        RectangleIntoSquares rectangleIntoSquares = new RectangleIntoSquares();
+        List<Integer> SquareSizeList = new ArrayList<>();
+        SquareSizeList.add(2);
+        SquareSizeList.add(2);
+        SquareSizeList.add(2);
+        SquareSizeList.add(2);
+        SquareSizeList.add(2);
+        assertEquals(SquareSizeList, rectangleIntoSquares.calculateSquareSizes(10, 2));
+    }
+
+    @Test
+    public void returnSquareSize_10_5() throws Exception {
+        RectangleIntoSquares rectangleIntoSquares = new RectangleIntoSquares();
+        List<Integer> SquareSizeList = new ArrayList<>();
+        SquareSizeList.add(5);
+        SquareSizeList.add(5);
+        assertEquals(SquareSizeList, rectangleIntoSquares.calculateSquareSizes(10, 5));
     }
 }
 
