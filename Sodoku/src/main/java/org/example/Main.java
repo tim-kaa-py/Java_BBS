@@ -171,12 +171,12 @@ public class Main {
     private static boolean isOneRowValid(int row, int[][] sudoku) {
 
 
-        List<Integer> blockData=arrayToList(sudoku,row,row,1,9);
-        blockData.sort(null);
+        List<Integer> rowData=arrayToList(sudoku,row,row,1,9);
+        rowData.sort(null);
 
         ArrayList<Integer> expectedArray = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5,6,7,8,9));
 
-        if (!blockData.equals(expectedArray)){
+        if (!rowData.equals(expectedArray)){
             System.out.printf("Row %s is invalid.%n",row);
             return false;
 
@@ -201,12 +201,12 @@ public class Main {
     private static boolean isOneColumValid(int column, int[][] sudoku) {
 
 
-        List<Integer> blockData=arrayToList(sudoku,1,9,column,column);
-        blockData.sort(null);
+        List<Integer> columnData=arrayToList(sudoku,1,9,column,column);
+        columnData.sort(null);
 
         ArrayList<Integer> expectedArray = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5,6,7,8,9));
 
-        if (!blockData.equals(expectedArray)){
+        if (!columnData.equals(expectedArray)){
             System.out.printf("Column %s is invalid.%n",column);
             return false;
         }
